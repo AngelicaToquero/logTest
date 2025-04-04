@@ -1,9 +1,13 @@
 #!/bin/bash
 
-# Create the log.txt file if it doesn't exist
-touch log.txt
+# Get the current timestamp
+TIMESTAMP=$(date)
 
-# Append the current timestamp
-echo "Current time: $(date '+%Y-%m-%d %H:%M:%S')" >> log.txt
+# Get GitHub username
+USERNAME=${GITHUB_ACTOR:-"unknown-user"}
+
+# Append to log.txt
+echo "$TIMESTAMP - Logged by $USERNAME" >> log.txt
+
 
 
